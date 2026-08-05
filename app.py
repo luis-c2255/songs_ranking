@@ -1,16 +1,24 @@
 import streamlit as st
 import json
-import os
+import gspread
+from google.oauth2.service_account import Credentials
 
-DATA_FILE = os.path.join(os.path.dirname(os.path.abspath(__file__)), "rankings_data.json")
+def get_sheet():
+    scopes = ["https://spreadsheets.google.com/feeds", "https://www.googleapis.com/auth/drive"]
+    creds = Credentials.from_service_account_file("secrets.json", scopes=scopes)
+    client = gspread.authorize(creds)
+    return client.open("Music Rankings Data").sheet1
 
 def load_data():
-    with open(DATA_FILE, "r") as f:
-        return json.load(f)
+    sheet = get_sheet()
+    data = sheet.cell(1, 1).value
+    if data:
+        return json.loads(data)
+    return {}
 
 def save_data(data):
-    with open(DATA_FILE, "w") as f:
-        json.dump(data, f, indent=4)
+    sheet = get_sheet()
+    sheet.update("A1", json.dumps(data))
     st.session_state.rankings_data = data
 
 if "rankings_data" not in st.session_state:
