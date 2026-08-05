@@ -7,10 +7,13 @@ creds = Credentials.from_service_account_file("secrets.json", scopes=scopes)
 client = gspread.authorize(creds)
 sheet = client.open("Music Rankings Data").sheet1
 
-with open("rankings_data.json", "r") as f:
-    data = json.load(f)
+# Read entire first row
+row = sheet.row_values(1)
+print(f"Found {len(row)} chunks")
 
-json_str = json.dumps(data)
-chunks = [[chunk] for chunk in [json_str[i:i+40000] for i in range(0, len(json_str), 40000)]]
-sheet.update(values=chunks, range_name="A1")
-print("Done!")
+# Save raw chunks to file
+json_str = "".join(row)
+with open("raw_backup.txt", "w") as f:
+    f.write(json_str)
+
+print(f"Saved {len(json_str)} characters to raw_backup.txt")
