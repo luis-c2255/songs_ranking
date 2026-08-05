@@ -18,7 +18,7 @@ def load_data():
 
 def save_data(data):
     sheet = get_sheet()
-    sheet.update("A1", json.dumps(data))
+    sheet.update(values=[[json.dumps(data)]], range_name="A1")
     st.session_state.rankings_data = data
 
 if "rankings_data" not in st.session_state:
