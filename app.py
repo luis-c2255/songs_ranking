@@ -30,9 +30,8 @@ def save_data(data):
     json_str = json.dumps(data)
     chunks = [json_str[i:i+40000] for i in range(0, len(json_str), 40000)]
     # Clear existing data first
-    sheet.clear()
+    sheet.batch_clear(["A1:Z1"])
     # Save chunks across columns
-    updates = [[chunk] for chunk in chunks]
     for i, chunk in enumerate(chunks):
         sheet.update(values=[[chunk]], range_name=f"{chr(65+i)}1")
     st.session_state.rankings_data = data
