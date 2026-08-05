@@ -534,7 +534,7 @@ def show_add_data():
     st.write("Fill in your weekly Spotify data.")
     st.write("---")
 
-    year = st.selectbox("Year", ["2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023", "2024", "2025", "2026"], key="form_year")
+    year = st.selectbox("Year", ["2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023", "2024", "2025", "2026"], key="form_year")
     month = st.selectbox("Month", months, key="form_month")
     week = st.selectbox("Week", weeks, key="form_week")
 
