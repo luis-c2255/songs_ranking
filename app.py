@@ -5,7 +5,7 @@ from google.oauth2.service_account import Credentials
 
 def get_sheet():
     scopes = ["https://spreadsheets.google.com/feeds", "https://www.googleapis.com/auth/drive"]
-    creds = Credentials.from_service_account_file("secrets.json", scopes=scopes)
+    creds = Credentials.from_service_account_info(st.secrets["gcp_service_account"], scopes=scopes)
     client = gspread.authorize(creds)
     return client.open("Music Rankings Data").sheet1
 
