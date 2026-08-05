@@ -11,14 +11,7 @@ def get_sheet():
 
 def load_data():
     sheet = get_sheet()
-    chunks = []
-    col = 1
-    while True:
-        value = sheet.cell(1, col).value
-        if not value:
-            break
-        chunks.append(value)
-        col += 1
+    chunks = sheet.col_values(1)
     if chunks:
         return json.loads("".join(chunks))
     return {}
@@ -26,12 +19,9 @@ def load_data():
 def save_data(data):
     sheet = get_sheet()
     json_str = json.dumps(data)
-    chunks = [json_str[i:i+40000] for i in range(0, len(json_str), 40000)]
-    # Clear existing data first
-    sheet.batch_clear(["A1:Z1"])
-    # Save chunks across columns
-    for i, chunk in enumerate(chunks):
-        sheet.update(values=[[chunk]], range_name=f"{chr(65+i)}1")
+    chunks = [[chunk] for chunk in [json_str[i:i+40000] for i in range(0, len(json_str), 40000)]]
+    sheet.clear()
+    sheet.update(values=chunks, range_name="A1")
     st.session_state.rankings_data = data
 
 if "rankings_data" not in st.session_state:
