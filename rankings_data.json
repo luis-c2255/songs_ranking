@@ -1,0 +1,410 @@
+{
+    "2024": {
+        "January": {
+            "Week 1": {
+                "totals": {
+                    "minutes": 320,
+                    "artists": 45,
+                    "songs": 120
+                },
+                "artists": [
+                    {
+                        "name": "The Weeknd",
+                        "points": 5,
+                        "image": "https://picsum.photos/seed/a1/100/100"
+                    },
+                    {
+                        "name": "Dua Lipa",
+                        "points": 4,
+                        "image": "https://picsum.photos/seed/a2/100/100"
+                    },
+                    {
+                        "name": "Justin Bieber",
+                        "points": 3,
+                        "image": "https://picsum.photos/seed/a3/100/100"
+                    },
+                    {
+                        "name": "Olivia Rodrigo",
+                        "points": 2,
+                        "image": "https://picsum.photos/seed/a4/100/100"
+                    },
+                    {
+                        "name": "BTS",
+                        "points": 1,
+                        "image": "https://picsum.photos/seed/a5/100/100"
+                    }
+                ],
+                "songs": [
+                    {
+                        "name": "Blinding Lights",
+                        "times_played": 12,
+                        "duration": 3.5,
+                        "image": "https://picsum.photos/seed/s1/100/100"
+                    },
+                    {
+                        "name": "Save Your Tears",
+                        "times_played": 10,
+                        "duration": 3.8,
+                        "image": "https://picsum.photos/seed/s2/100/100"
+                    },
+                    {
+                        "name": "Levitating",
+                        "times_played": 9,
+                        "duration": 3.2,
+                        "image": "https://picsum.photos/seed/s3/100/100"
+                    },
+                    {
+                        "name": "Peaches",
+                        "times_played": 8,
+                        "duration": 3.6,
+                        "image": "https://picsum.photos/seed/s4/100/100"
+                    },
+                    {
+                        "name": "Good 4 U",
+                        "times_played": 7,
+                        "duration": 2.9,
+                        "image": "https://picsum.photos/seed/s5/100/100"
+                    }
+                ]
+            },
+            "Week 2": {
+                "totals": {
+                    "minutes": 290,
+                    "artists": 38,
+                    "songs": 105
+                },
+                "artists": [
+                    {
+                        "name": "Dua Lipa",
+                        "points": 5,
+                        "image": "https://picsum.photos/seed/a2/100/100"
+                    },
+                    {
+                        "name": "The Weeknd",
+                        "points": 4,
+                        "image": "https://picsum.photos/seed/a1/100/100"
+                    },
+                    {
+                        "name": "Olivia Rodrigo",
+                        "points": 3,
+                        "image": "https://picsum.photos/seed/a4/100/100"
+                    },
+                    {
+                        "name": "BTS",
+                        "points": 2,
+                        "image": "https://picsum.photos/seed/a5/100/100"
+                    },
+                    {
+                        "name": "Billie Eilish",
+                        "points": 1,
+                        "image": "https://picsum.photos/seed/a6/100/100"
+                    }
+                ],
+                "songs": [
+                    {
+                        "name": "Levitating",
+                        "times_played": 11,
+                        "duration": 3.2,
+                        "image": "https://picsum.photos/seed/s3/100/100"
+                    },
+                    {
+                        "name": "Blinding Lights",
+                        "times_played": 9,
+                        "duration": 3.5,
+                        "image": "https://picsum.photos/seed/s1/100/100"
+                    },
+                    {
+                        "name": "Good 4 U",
+                        "times_played": 8,
+                        "duration": 2.9,
+                        "image": "https://picsum.photos/seed/s5/100/100"
+                    },
+                    {
+                        "name": "Peaches",
+                        "times_played": 7,
+                        "duration": 3.6,
+                        "image": "https://picsum.photos/seed/s4/100/100"
+                    },
+                    {
+                        "name": "Save Your Tears",
+                        "times_played": 6,
+                        "duration": 3.8,
+                        "image": "https://picsum.photos/seed/s2/100/100"
+                    }
+                ]
+            },
+            "Week 3": {
+                "totals": {
+                    "minutes": 310,
+                    "artists": 42,
+                    "songs": 115
+                },
+                "artists": [
+                    {
+                        "name": "Justin Bieber",
+                        "points": 5,
+                        "image": "https://picsum.photos/seed/a3/100/100"
+                    },
+                    {
+                        "name": "Dua Lipa",
+                        "points": 4,
+                        "image": "https://picsum.photos/seed/a2/100/100"
+                    },
+                    {
+                        "name": "The Weeknd",
+                        "points": 3,
+                        "image": "https://picsum.photos/seed/a1/100/100"
+                    },
+                    {
+                        "name": "Billie Eilish",
+                        "points": 2,
+                        "image": "https://picsum.photos/seed/a6/100/100"
+                    },
+                    {
+                        "name": "Olivia Rodrigo",
+                        "points": 1,
+                        "image": "https://picsum.photos/seed/a4/100/100"
+                    }
+                ],
+                "songs": [
+                    {
+                        "name": "Save Your Tears",
+                        "times_played": 13,
+                        "duration": 3.8,
+                        "image": "https://picsum.photos/seed/s2/100/100"
+                    },
+                    {
+                        "name": "Good 4 U",
+                        "times_played": 10,
+                        "duration": 2.9,
+                        "image": "https://picsum.photos/seed/s5/100/100"
+                    },
+                    {
+                        "name": "Blinding Lights",
+                        "times_played": 9,
+                        "duration": 3.5,
+                        "image": "https://picsum.photos/seed/s1/100/100"
+                    },
+                    {
+                        "name": "Levitating",
+                        "times_played": 7,
+                        "duration": 3.2,
+                        "image": "https://picsum.photos/seed/s3/100/100"
+                    },
+                    {
+                        "name": "Peaches",
+                        "times_played": 6,
+                        "duration": 3.6,
+                        "image": "https://picsum.photos/seed/s4/100/100"
+                    }
+                ]
+            },
+            "Week 4": {
+                "totals": {
+                    "minutes": 280,
+                    "artists": 35,
+                    "songs": 98
+                },
+                "artists": [
+                    {
+                        "name": "Olivia Rodrigo",
+                        "points": 5,
+                        "image": "https://picsum.photos/seed/a4/100/100"
+                    },
+                    {
+                        "name": "Justin Bieber",
+                        "points": 4,
+                        "image": "https://picsum.photos/seed/a3/100/100"
+                    },
+                    {
+                        "name": "Billie Eilish",
+                        "points": 3,
+                        "image": "https://picsum.photos/seed/a6/100/100"
+                    },
+                    {
+                        "name": "The Weeknd",
+                        "points": 2,
+                        "image": "https://picsum.photos/seed/a1/100/100"
+                    },
+                    {
+                        "name": "Dua Lipa",
+                        "points": 1,
+                        "image": "https://picsum.photos/seed/a2/100/100"
+                    }
+                ],
+                "songs": [
+                    {
+                        "name": "Peaches",
+                        "times_played": 14,
+                        "duration": 3.6,
+                        "image": "https://picsum.photos/seed/s4/100/100"
+                    },
+                    {
+                        "name": "Levitating",
+                        "times_played": 10,
+                        "duration": 3.2,
+                        "image": "https://picsum.photos/seed/s3/100/100"
+                    },
+                    {
+                        "name": "Good 4 U",
+                        "times_played": 8,
+                        "duration": 2.9,
+                        "image": "https://picsum.photos/seed/s5/100/100"
+                    },
+                    {
+                        "name": "Save Your Tears",
+                        "times_played": 7,
+                        "duration": 3.8,
+                        "image": "https://picsum.photos/seed/s2/100/100"
+                    },
+                    {
+                        "name": "Blinding Lights",
+                        "times_played": 5,
+                        "duration": 3.5,
+                        "image": "https://picsum.photos/seed/s1/100/100"
+                    }
+                ]
+            }
+        }
+    },
+    "2026": {
+        "July": {
+            "Week 1": {
+                "totals": {
+                    "minutes": 116,
+                    "artists": 78,
+                    "songs": 39
+                },
+                "artists": [
+                    {
+                        "name": "Pascal Junior",
+                        "points": 5,
+                        "image": "https://picsum.photos/seed/na0/100/100"
+                    },
+                    {
+                        "name": "Nikki Muxx",
+                        "points": 4,
+                        "image": "https://picsum.photos/seed/na1/100/100"
+                    },
+                    {
+                        "name": "Simone Vitullo",
+                        "points": 3,
+                        "image": "https://picsum.photos/seed/na2/100/100"
+                    },
+                    {
+                        "name": "Giorgio Gee",
+                        "points": 2,
+                        "image": "https://picsum.photos/seed/na3/100/100"
+                    },
+                    {
+                        "name": "Matthew Clanton",
+                        "points": 1,
+                        "image": "https://picsum.photos/seed/na4/100/100"
+                    }
+                ],
+                "songs": [
+                    {
+                        "name": "My All",
+                        "times_played": 4,
+                        "duration": 3.58,
+                        "image": "https://picsum.photos/seed/ns0/100/100"
+                    },
+                    {
+                        "name": "Crush",
+                        "times_played": 4,
+                        "duration": 3.18,
+                        "image": "https://picsum.photos/seed/ns1/100/100"
+                    },
+                    {
+                        "name": "Let me love you",
+                        "times_played": 4,
+                        "duration": 2.42,
+                        "image": "https://picsum.photos/seed/ns2/100/100"
+                    },
+                    {
+                        "name": "I  put a spell on you - extended mix",
+                        "times_played": 2,
+                        "duration": 6.27,
+                        "image": "https://picsum.photos/seed/ns3/100/100"
+                    },
+                    {
+                        "name": "Yo no lo s\u00e9",
+                        "times_played": 2,
+                        "duration": 2.42,
+                        "image": "https://picsum.photos/seed/ns4/100/100"
+                    }
+                ]
+            }
+        }
+    },
+    "2025": {
+        "January": {
+            "Week 1": {
+                "totals": {
+                    "minutes": 50,
+                    "artists": 1,
+                    "songs": 50
+                },
+                "artists": [
+                    {
+                        "name": "Pascal",
+                        "points": 5,
+                        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSw7iSxn9OBmn62jOvgCfr6wj-5SZFV1t4PSZIub2G10A&s=10"
+                    },
+                    {
+                        "name": "",
+                        "points": 4,
+                        "image": "https://picsum.photos/seed/na1/100/100"
+                    },
+                    {
+                        "name": "",
+                        "points": 3,
+                        "image": "https://picsum.photos/seed/na2/100/100"
+                    },
+                    {
+                        "name": "",
+                        "points": 2,
+                        "image": "https://picsum.photos/seed/na3/100/100"
+                    },
+                    {
+                        "name": "",
+                        "points": 1,
+                        "image": "https://picsum.photos/seed/na4/100/100"
+                    }
+                ],
+                "songs": [
+                    {
+                        "name": "",
+                        "times_played": 0,
+                        "duration": 0.0,
+                        "image": "https://picsum.photos/seed/ns0/100/100"
+                    },
+                    {
+                        "name": "",
+                        "times_played": 0,
+                        "duration": 0.0,
+                        "image": "https://picsum.photos/seed/ns1/100/100"
+                    },
+                    {
+                        "name": "",
+                        "times_played": 0,
+                        "duration": 0.0,
+                        "image": "https://picsum.photos/seed/ns2/100/100"
+                    },
+                    {
+                        "name": "",
+                        "times_played": 0,
+                        "duration": 0.0,
+                        "image": "https://picsum.photos/seed/ns3/100/100"
+                    },
+                    {
+                        "name": "",
+                        "times_played": 0,
+                        "duration": 0.0,
+                        "image": "https://picsum.photos/seed/ns4/100/100"
+                    }
+                ]
+            }
+        }
+    }
+}
