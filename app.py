@@ -166,7 +166,7 @@ months = [
     "May", "June", "July", "August",
     "September", "October", "November", "December"
 ]
-weeks = ["Week 1", "Week 2", "Week 3", "Week 4"]
+weeks = ["Week 1", "Week 2", "Week 3", "Week 4", "Week 5"]
 
 # --- HOME PAGE ---
 def show_home():
