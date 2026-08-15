@@ -3,26 +3,51 @@ import json
 import gspread
 from google.oauth2.service_account import Credentials
 
-def get_sheet():
-    scopes = ["https://spreadsheets.google.com/feeds", "https://www.googleapis.com/auth/drive"]
-    creds = Credentials.from_service_account_info(st.secrets["gcp_service_account"], scopes=scopes)
-    client = gspread.authorize(creds)
-    return client.open("Music Rankings Data").sheet1
+def get_sheet(retries=3):
+    for attempt in range(retries):
+        try:
+            scopes = ["https://spreadsheets.google.com/feeds", "https://www.googleapis.com/auth/drive"]
+            creds = Credentials.from_service_account_info(st.secrets["gcp_service_account"], scopes=scopes)
+            client = gspread.authorize(creds)
+            return client.open("Music Rankings Data").sheet1
+        except Exception as e:
+            if attempt < retries - 1:
+                time.sleep(2)
+            else:
+                raise e
 
-def load_data():
-    sheet = get_sheet()
-    chunks = sheet.col_values(1)
-    if chunks:
-        return json.loads("".join(chunks))
-    return {}
+def load_data(retries=3):
+    for attempt in range(retries):
+        try:
+            sheet = get_sheet()
+            chunks = sheet.col_values(1)
+            if chunks:
+                return json.loads("".join(chunks))
+            return {}
+        except Exception as e:
+            if attempt < retries - 1:
+                st.warning(f"Connection issue, retrying... ({attempt + 1}/{retries})")
+                time.sleep(2)
+            else:
+                st.error("Could not connect to Google Sheets. Please refresh the page.")
+                return {}
 
-def save_data(data):
-    sheet = get_sheet()
-    json_str = json.dumps(data)
-    chunks = [[chunk] for chunk in [json_str[i:i+40000] for i in range(0, len(json_str), 40000)]]
-    sheet.clear()
-    sheet.update(values=chunks, range_name="A1")
-    st.session_state.rankings_data = data
+def save_data(data, retries=3):
+    for attempt in range(retries):
+        try:
+            sheet = get_sheet()
+            json_str = json.dumps(data)
+            chunks = [[chunk] for chunk in [json_str[i:i+40000] for i in range(0, len(json_str), 40000)]]
+            sheet.clear()
+            sheet.update(values=chunks, range_name="A1")
+            st.session_state.rankings_data = data
+            return
+        except Exception as e:
+            if attempt < retries - 1:
+                st.warning(f"Save issue, retrying... ({attempt + 1}/{retries})")
+                time.sleep(2)
+            else:
+                st.error("Could not save data. Please try again.")
 
 if "rankings_data" not in st.session_state:
     st.session_state.rankings_data = load_data()
