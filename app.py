@@ -282,7 +282,7 @@ def show_month():
     st.write("---")
     st.write("Select a week:")
 
-    cols = st.columns(4)
+    cols = st.columns(len(weeks))
     for i, week in enumerate(weeks):
         with cols[i]:
             if week in month_data:
