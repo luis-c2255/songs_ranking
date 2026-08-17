@@ -849,17 +849,25 @@ apply_cyberpunk_style()
 
 if st.session_state.page == "home":
     show_home()
+    st.stop()
 elif st.session_state.page == "year":
     show_year()
+    st.stop()
 elif st.session_state.page == "month":
     show_month()
+    st.stop()
 elif st.session_state.page == "week":
     show_week()
+    st.stop()
 elif st.session_state.page == "summary":
     show_summary()
+    st.stop()
 elif st.session_state.page == "add_data":
     show_add_data()
+    st.stop()
 elif st.session_state.page == "edit_data":
     show_edit_data()
+    st.stop()
 elif st.session_state.page == "upload_csv":
     show_upload_csv()
+    st.stop()
