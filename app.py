@@ -770,8 +770,7 @@ st.markdown("""
     2016,January,Week 1,song,1,Blinding Lights,12,3.5,https://...,,,
     2016,January,Week 1,totals,,,,,,320,45,120
         """)
-
-    uploaded_file = st.file_uploader("Choose a CSV file", type="csv")
+uploaded_file = st.file_uploader("Choose a CSV file", type="csv")
 
     if uploaded_file is not None:
         import pandas as pd
