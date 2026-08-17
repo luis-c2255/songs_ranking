@@ -195,6 +195,7 @@ weeks = ["Week 1", "Week 2", "Week 3", "Week 4", "Week 5"]
 
 # --- HOME PAGE ---
 def show_home():
+    apply_cyberpunk_style()
     cyber_title('<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#00fff9" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="filter: drop-shadow(0 0 8px #00fff9); vertical-align: middle;"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg> Music Rankings')
     st.write(" ")
 
@@ -234,6 +235,7 @@ def show_home():
 
 # --- YEAR PAGE ---
 def show_year():
+    apply_cyberpunk_style()
     year = st.session_state.selected_year
     cyber_title(f"{year}", icon=icon_calendar)
     st.write("Select a month:")
@@ -259,6 +261,7 @@ def show_year():
 
 # --- MONTH PAGE ---
 def show_month():
+    apply_cyberpunk_style()
     year = st.session_state.selected_year
     month = st.session_state.selected_month
     cyber_title(f"{month} {year}", icon=icon_calendar)
@@ -371,6 +374,7 @@ def show_month():
 
 # --- WEEK PAGE ---
 def show_week():
+    apply_cyberpunk_style()
     year = st.session_state.selected_year
     month = st.session_state.selected_month
     week = st.session_state.selected_week
@@ -457,6 +461,7 @@ def show_week():
 
 # --- SUMMARY PAGE ---
 def show_summary():
+    apply_cyberpunk_style()
     cyber_title("Year Summary", icon=icon_chart)
     st.write("Your top music across all months combined.")
     st.write("---")
@@ -558,6 +563,7 @@ def show_summary():
 
 # --- ADD DATA PAGE ---
 def show_add_data():
+    apply_cyberpunk_style()
     cyber_title("Add Week Data", icon=icon_plus)
     form_v = st.session_state.get("form_version", 0)
     st.write("Fill in your weekly Spotify data.")
@@ -660,6 +666,7 @@ def show_add_data():
 
 # ---EDIT DATA PAGE ---
 def show_edit_data():
+    apply_cyberpunk_style()
     year = st.session_state.selected_year
     month = st.session_state.selected_month
     week = st.session_state.selected_week
@@ -759,6 +766,7 @@ def show_edit_data():
 
 # --- CSV UPLOAD PAGE --
 def show_upload_csv():
+    apply_cyberpunk_style()
     cyber_title("📂 Upload CSV")
     st.write("Upload your historical music data as a CSV file.")
     st.write("---")
@@ -845,7 +853,6 @@ if st.button("← Back to Home", use_container_width=True):
         st.rerun()
 
 # --- ROUTER ---
-apply_cyberpunk_style()
 
 if st.session_state.page == "home":
     show_home()
