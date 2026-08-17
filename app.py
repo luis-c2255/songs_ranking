@@ -219,11 +219,11 @@ def show_home():
         st.session_state.page = "add_data"
         st.rerun()
 
-    st.write("---")
-
     if st.button("📂 Upload CSV", use_container_width=True):
         st.session_state.page = "upload_csv"
         st.rerun()
+
+    st.write("---")
     st.write("Select a year:")
 
     for year in rankings_data.keys():
