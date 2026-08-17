@@ -757,6 +757,94 @@ def show_edit_data():
         st.session_state.page = "week"
         st.rerun()
 
+# --- CSV UPLOAD PAGE --
+def show_upload_csv():
+    cyber_title("📂 Upload CSV")
+    st.write("Upload your historical music data as a CSV file.")
+    st.write("---")
+
+st.markdown("""
+    **CSV Format:**
+    year,month,week,type,position,name,plays,duration,image_url,total_minutes,total_artists,total_songs
+    2016,January,Week 1,artist,1,The Weeknd,,,https://...,,,
+    2016,January,Week 1,song,1,Blinding Lights,12,3.5,https://...,,,
+    2016,January,Week 1,totals,,,,,,320,45,120
+        """)
+
+    uploaded_file = st.file_uploader("Choose a CSV file", type="csv")
+
+    if uploaded_file is not None:
+        import pandas as pd
+        df = pd.read_csv(uploaded_file)
+        st.write("Preview of your data:")
+        st.dataframe(df.head(20))
+
+        if st.button("◈ Process and Save", use_container_width=True):
+            current_data = load_data()
+
+            for _, row in df.iterrows():
+                year = str(row["year"])
+                month = str(row["month"])
+                week = str(row["week"])
+                row_type = str(row["type"])
+
+                # Create structure if needed
+                if year not in current_data:
+                    current_data[year] = {}
+                if month not in current_data[year]:
+                    current_data[year][month] = {}
+                if week not in current_data[year][month]:
+                    current_data[year][month][week] = {
+                        "totals": {"minutes": 0, "artists": 0, "songs": 0},
+                        "artists": [],
+                        "songs": []
+                    }
+
+                if row_type == "totals":
+                    current_data[year][month][week]["totals"] = {
+                        "minutes": int(row["total_minutes"]) if pd.notna(row["total_minutes"]) else 0,
+                        "artists": int(row["total_artists"]) if pd.notna(row["total_artists"]) else 0,
+                        "songs": int(row["total_songs"]) if pd.notna(row["total_songs"]) else 0
+                    }
+
+                elif row_type == "artist":
+                    points_map = {1: 5, 2: 4, 3: 3, 4: 2, 5: 1}
+                    position = int(row["position"])
+                    artist = {
+                        "name": str(row["name"]),
+                        "points": points_map.get(position, 0),
+                        "image": str(row["image_url"]) if pd.notna(row["image_url"]) else f"https://picsum.photos/seed/a{position}/100/100"
+                    }
+                    # Add or update artist at correct position
+                    artists = current_data[year][month][week]["artists"]
+                    while len(artists) < position:
+                        artists.append({})
+                    artists[position - 1] = artist
+
+                elif row_type == "song":
+                    position = int(row["position"])
+                    plays = float(row["plays"]) if pd.notna(row["plays"]) else 0
+                    duration = float(row["duration"]) if pd.notna(row["duration"]) else 0
+                    song = {
+                        "name": str(row["name"]),
+                        "times_played": plays,
+                        "duration": duration,
+                        "image": str(row["image_url"]) if pd.notna(row["image_url"]) else f"https://picsum.photos/seed/s{position}/100/100"
+                    }
+                    songs = current_data[year][month][week]["songs"]
+                    while len(songs) < position:
+                        songs.append({})
+                    songs[position - 1] = song
+
+            save_data(current_data)
+            st.session_state.rankings_data = current_data
+            st.success("✅ CSV data uploaded and saved successfully!")
+
+    st.write("---")
+    if st.button("← Back to Home", use_container_width=True):
+        st.session_state.page = "home"
+        st.rerun()
+
 # --- ROUTER ---
 apply_cyberpunk_style()
 
@@ -774,3 +862,5 @@ elif st.session_state.page == "add_data":
     show_add_data()
 elif st.session_state.page == "edit_data":
     show_edit_data()
+elif st.session_state.page == "upload_csv":
+    show_upload-csv()
