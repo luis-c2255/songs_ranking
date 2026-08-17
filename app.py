@@ -771,16 +771,16 @@ def show_upload_csv():
     st.write("Upload your historical music data as a CSV file.")
     st.write("---")
 
-st.markdown("""
+    st.markdown("""
     **CSV Format:**
     year,month,week,type,position,name,plays,duration,image_url,total_minutes,total_artists,total_songs
     2016,January,Week 1,artist,1,The Weeknd,,,https://...,,,
     2016,January,Week 1,song,1,Blinding Lights,12,3.5,https://...,,,
     2016,January,Week 1,totals,,,,,,320,45,120
         """)
-uploaded_file = st.file_uploader("Choose a CSV file", type="csv")
+    uploaded_file = st.file_uploader("Choose a CSV file", type="csv")
 
-if uploaded_file is not None:
+    if uploaded_file is not None:
         import pandas as pd
         df = pd.read_csv(uploaded_file)
         st.write("Preview of your data:")
@@ -847,8 +847,8 @@ if uploaded_file is not None:
             st.session_state.rankings_data = current_data
             st.success("✅ CSV data uploaded and saved successfully!")
 
-st.write("---")
-if st.button("← Back to Home", use_container_width=True):
+    st.write("---")
+    if st.button("← Back to Home", use_container_width=True):
         st.session_state.page = "home"
         st.rerun()
 
