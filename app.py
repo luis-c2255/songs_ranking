@@ -772,7 +772,7 @@ st.markdown("""
         """)
 uploaded_file = st.file_uploader("Choose a CSV file", type="csv")
 
-    if uploaded_file is not None:
+if uploaded_file is not None:
         import pandas as pd
         df = pd.read_csv(uploaded_file)
         st.write("Preview of your data:")
@@ -839,8 +839,8 @@ uploaded_file = st.file_uploader("Choose a CSV file", type="csv")
             st.session_state.rankings_data = current_data
             st.success("✅ CSV data uploaded and saved successfully!")
 
-    st.write("---")
-    if st.button("← Back to Home", use_container_width=True):
+st.write("---")
+if st.button("← Back to Home", use_container_width=True):
         st.session_state.page = "home"
         st.rerun()
 
@@ -862,4 +862,4 @@ elif st.session_state.page == "add_data":
 elif st.session_state.page == "edit_data":
     show_edit_data()
 elif st.session_state.page == "upload_csv":
-    show_upload-csv()
+    show_upload_csv()
