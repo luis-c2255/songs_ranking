@@ -256,9 +256,32 @@ def show_year():
                     st.rerun()
 
     st.write("---")
-    if st.button("⌂ Back to Home"):
-        st.session_state.page = "home"
-        st.rerun()
+    col1, col2 = st.columns(2)
+    with col1:
+        if st.button("← Back to Home", use_container_width=True):
+            st.session_state.page = "home"
+            st.rerun()
+    with col2:
+        if st.button("🗑 Delete This Year", use_container_width=True):
+            st.session_state.confirm_delete_year = True
+            st.rerun()
+
+    if st.session_state.get("confirm_delete_year"):
+        st.warning(f"⚠️ Are you sure you want to delete ALL data for {year}? This cannot be undone!")
+        col1, col2 = st.columns(2)
+        with col1:
+            if st.button("✅ Yes, Delete Year", use_container_width=True):
+                current_data = load_data()
+                del current_data[year]
+                save_data(current_data)
+                st.session_state.rankings_data = current_data
+                st.session_state.confirm_delete_year = False
+                st.session_state.page = "home"
+                st.rerun()
+        with col2:
+            if st.button("← Cancel", use_container_width=True):
+                st.session_state.confirm_delete_year = False
+                st.rerun()
 
 # --- MONTH PAGE ---
 def show_month():
