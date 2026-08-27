@@ -838,10 +838,10 @@ def show_upload_csv():
             current_data = load_data()
 
             for _, row in df.iterrows():
-                year = str(row["year"])
-                month = str(row["month"])
-                week = str(row["week"])
-                row_type = str(row["type"])
+                year = str(row["year"]).strip()
+                month = str(row["month"]).strip()
+                week = str(row["week"]).strip()
+                row_type = str(row["type"]).strip()
 
                 # Create structure if needed
                 if year not in current_data:
@@ -866,7 +866,7 @@ def show_upload_csv():
                     points_map = {1: 5, 2: 4, 3: 3, 4: 2, 5: 1}
                     position = int(row["position"])
                     artist = {
-                        "name": str(row["name"]),
+                        "name": str(row["name"]).strip(),
                         "points": points_map.get(position, 0),
                         "image": str(row["image_url"]) if pd.notna(row["image_url"]) else f"https://picsum.photos/seed/a{position}/100/100"
                     }
@@ -881,7 +881,7 @@ def show_upload_csv():
                     plays = float(row["plays"]) if pd.notna(row["plays"]) else 0
                     duration = float(row["duration"]) if pd.notna(row["duration"]) else 0
                     song = {
-                        "name": str(row["name"]),
+                        "name": str(row["name"]).strip(),
                         "times_played": plays,
                         "duration": duration,
                         "image": str(row["image_url"]) if pd.notna(row["image_url"]) else f"https://picsum.photos/seed/s{position}/100/100"
