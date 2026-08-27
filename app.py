@@ -527,8 +527,8 @@ def show_summary():
                 st.session_state.summary_year = option
                 st.rerun()
 
-    selected = st.session_state.get("summary_year", "All Years")
-    st.write(f"Showing: **{selected}**")
+    selected = st.session_state.summary_year
+    st.markdown(f"Showing: **{selected}**")
     st.write("---")
 
     all_artist_points = {}
@@ -539,7 +539,7 @@ def show_summary():
 
     # Filter by selected year or show all
     if selected == "All Years":
-        data_to_show = rankings_data
+        data_to_show = st.session_state.rankings_data
     else:
         data_to_show = {selected: rankings_data[selected]} if selected in rankings_data else {}
 
