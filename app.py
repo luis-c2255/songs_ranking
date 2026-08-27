@@ -545,7 +545,7 @@ def show_summary():
         data_to_show = {selected: rankings_data[selected]} if selected in rankings_data else {}
 
 
-    for year, year_data in rankings_data.items():
+    for year, year_data in data_to_show.items():
         for month, month_data in year_data.items():
             for week, week_data in month_data.items():
                 total_minutes += week_data["totals"]["minutes"]
