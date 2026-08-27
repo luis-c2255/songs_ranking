@@ -157,7 +157,7 @@ if "selected_category" not in st.session_state:
     st.session_state.selected_category = None
 if "summary_year" not in st.session_state:
     st.session_state.summary_year = "All Years"
-    
+
 # --- Add form state ---
 if "form_year" not in st.session_state:
     st.session_state.form_year = "2024"
@@ -536,6 +536,13 @@ def show_summary():
     total_minutes = 0
     total_artists = 0
     total_songs = 0
+
+    # Filter by selected year or show all
+    if selected == "All Years":
+        data_to_show = rankings_data
+    else:
+        data_to_show = {selected: rankings_data[selected]} if selected in rankings_data else {}
+
 
     for year, year_data in rankings_data.items():
         for month, month_data in year_data.items():
