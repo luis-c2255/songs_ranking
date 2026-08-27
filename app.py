@@ -528,6 +528,7 @@ def show_summary():
                 st.rerun()
 
     selected = st.session_state.summary_year
+    st.write(f"DEBUG: selected = {selected}")
     st.markdown(f"Showing: **{selected}**")
     st.write("---")
 
