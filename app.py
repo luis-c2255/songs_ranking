@@ -453,9 +453,33 @@ def show_week():
         st.write("---")
 
     st.write("---")
-    if st.button("✎ Edit This Week", use_container_width=True):
-        st.session_state.page = "edit_data"
-        st.rerun()
+    col1, col2 = st.columns(2)
+    with col1:
+        if st.button("✎ Edit This Week", use_container_width=True):
+            st.session_state.page = "edit_data"
+            st.rerun()
+    with col2:
+        if st.button("🗑 Delete This Week", use_container_width=True):
+            st.session_state.confirm_delete_week = True
+            st.rerun()
+    if st.session_state.get("confirm_delete_week"):
+        st.warning(f"⚠️ Are you sure you want to delete {week} of {month} {year}? This cannot be undone!")
+        col1, col2 = st.columns(2)
+        with col1:
+            if st.button("✅ Yes, Delete", use_container_width=True):
+                current_data = load_data()
+                del current_data[year][month][week]
+                save_data(current_data)
+                st.session_state.rankings_data = current_data
+                st.session_state.confirm_delete_week = False
+                st.session_state.page = "month"
+                st.rerun()
+        with col2:
+            if st.button("← Cancel", use_container_width=True):
+                st.session_state.confirm_delete_week = False
+                st.rerun()
+    
+    st.write("---")
     if st.button("← Back to Month"):
         st.session_state.page = "month"
         st.rerun()
