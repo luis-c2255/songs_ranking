@@ -155,6 +155,9 @@ if "selected_week" not in st.session_state:
     st.session_state.selected_week = None
 if "selected_category" not in st.session_state:
     st.session_state.selected_category = None
+if "summary_year" not in st.session_state:
+    st.session_state.summary_year = "All Years"
+    
 # --- Add form state ---
 if "form_year" not in st.session_state:
     st.session_state.form_year = "2024"
@@ -511,7 +514,21 @@ def show_week():
 def show_summary():
     apply_cyberpunk_style()
     cyber_title("Year Summary", icon=icon_chart)
-    st.write("Your top music across all months combined.")
+    st.write("---")
+
+    # Year selector
+    available_years = list(rankings_data.keys())
+    options = ['All Years'] + sorted(available_years)
+
+    cols = st.columns(len(options))
+    for i, option in enumerate(options):
+        with cols[i]:
+            if st.button(option, key=f"summary_{option}", use_container_width=True):
+                st.session_state.summary_year = option
+                st.rerun()
+
+    selected = st.session_state.get("summary_year", "All Years")
+    st.write(f"Showing: **{selected}**")
     st.write("---")
 
     all_artist_points = {}
