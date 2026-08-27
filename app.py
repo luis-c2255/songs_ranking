@@ -379,7 +379,7 @@ def show_month():
         with top3_cols[i]:
             st.image(data["image"], width=200)
             st.markdown(f"### {medals[i]} {name}", unsafe_allow_html=True)
-            st.markdown(f"{icon_clock} **{data['minutes']} min**", unsafe_allow_html=True)
+            st.markdown(f"{icon_clock} **{round(data['minutes'], 1)} min**", unsafe_allow_html=True)
 
     st.write(" ")
     for i in range(3, min(len(sorted_songs), 10)):
@@ -391,7 +391,7 @@ def show_month():
             st.image(data["image"], width=100)
             st.markdown(f"**{name}**")
         with col3:
-            st.markdown(f"{icon_clock} {data['minutes']} min", unsafe_allow_html=True)
+            st.markdown(f"{icon_clock} {round(data['minutes'], 1)} min", unsafe_allow_html=True)
         st.write("---")
 
     st.write("---")
@@ -460,7 +460,7 @@ def show_week():
         with top3_cols[i]:
             st.image(song["image"], width=200)
             st.markdown(f"### {medals[i]} {song['name']}", unsafe_allow_html=True)
-            st.markdown(f"{icon_clock} **{total_mins} min**", unsafe_allow_html=True)
+            st.markdown(f"{icon_clock} **{round(total_mins, 1)} min**", unsafe_allow_html=True)
             st.markdown(f"{icon_music} {song['times_played']} plays", unsafe_allow_html=True)
 
     st.write(" ")
@@ -474,7 +474,7 @@ def show_week():
             st.image(song["image"], width=100)
             st.markdown(f"**{song['name']}**")
         with col3:
-            st.markdown(f"{icon_clock} {total_mins} min", unsafe_allow_html=True)
+            st.markdown(f"{icon_clock} {round(total_mins, 1)} min", unsafe_allow_html=True)
             st.markdown(f"{icon_music} {song['times_played']} plays", unsafe_allow_html=True)
         st.write("---")
 
@@ -614,7 +614,7 @@ def show_summary():
         with top3_cols[i]:
             st.image(data["image"], width=200)
             st.markdown(f"### {medals[i]} {name}", unsafe_allow_html=True)
-            st.markdown(f"{icon_clock} **{data['minutes']} min**", unsafe_allow_html=True)
+            st.markdown(f"{icon_clock} **{round(data['minutes'], 1)} min**", unsafe_allow_html=True)
 
     st.write(" ")
     for i in range(3, len(sorted_songs)):
@@ -626,7 +626,7 @@ def show_summary():
             st.image(data["image"], width=100)
             st.markdown(f"**{name}**")
         with col3:
-            st.markdown(f"{icon_clock} {data['minutes']} min", unsafe_allow_html=True)
+            st.markdown(f"{icon_clock} {round(data['minutes'], 1)} min", unsafe_allow_html=True)
         st.write("---")
 
     if st.button("⌂ Back to Home"):
