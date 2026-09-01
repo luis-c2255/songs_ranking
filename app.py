@@ -785,7 +785,7 @@ def show_edit_data():
         with col1:
             name = st.text_input(f"Song #{i+1}", value=existing["songs"][i]["name"], key=f"edit_song_name_{i}")
         with col2:
-            times_played = st.number_input(f"Times played", min_value=0, value=existing["songs"][i]["times_played"], key=f"edit_song_plays_{i}")
+            times_played = st.number_input(f"Times played", min_value=0.0, value=float(existing["songs"][i]["times_played"]), key=f"edit_song_plays_{i}")
         with col3:
             duration = st.number_input(f"Duration (min)", min_value=0.0, step=0.1, value=existing["songs"][i]["duration"], key=f"edit_song_dur_{i}")
         col1, col2 = st.columns([3, 2])
