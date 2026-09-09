@@ -60,16 +60,16 @@ st.set_page_config(page_title="Music Rankings", layout="wide")
 
 # --- Cyberpunk Style ---
 def apply_cyberpunk_style():
-    st.markdown('<link href="https://fonts.googleapis.com/css2?family=Iceland&family=Rock+Salt&display=swap" rel="stylesheet">', unsafe_allow_html=True)
+    st.markdown('<link href="https://fonts.googleapis.com/css2?family=Iceland&family=Bungee+Shade&display=swap" rel="stylesheet">', unsafe_allow_html=True)
     st.markdown('<script src="https://unpkg.com/lucide@latest"></script>', unsafe_allow_html=True)
     st.markdown("""
         <style>
-        @import url('https://fonts.googleapis.com/css2?family=Iceland&family=Rock+Salt&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Iceland&family=Bungee+Shade&display=swap');
         .stApp { background-color: #0a0a0f; }
         h1 {
             color: #00fff9;
             text-shadow: 0 0 10px #00fff9, 0 0 20px #00fff9;
-            font-family: "Rock Salt", sans-serif;
+            font-family: "Bungee Shade", sans-serif;
             text-align: center;
         }
         h2, h3 {
@@ -125,7 +125,7 @@ def apply_cyberpunk_style():
 
 def cyber_title(text, icon=None):
     icon_html = f'<span style="filter: drop-shadow(0 0 8px #00fff9); vertical-align: middle; margin-right: 10px;">{icon}</span>' if icon else ""
-    st.markdown(f'<h1 style="font-family: \'Rock Salt\', sans-serif; text-align: center; color: #00fff9; text-shadow: 0 0 10px #00fff9;">{icon_html}{ text}</h1>', unsafe_allow_html=True)
+    st.markdown(f'<h1 style="font-family: \'Bungee Shade\', sans-serif; text-align: center; color: #00fff9; text-shadow: 0 0 10px #00fff9;">{icon_html}{ text}</h1>', unsafe_allow_html=True)
 
 # --- Icons ---
 icon_music = '<svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#0FFFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>'
