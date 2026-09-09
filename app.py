@@ -73,8 +73,8 @@ def apply_cyberpunk_style():
             text-align: center;
         }
         h2, h3 {
-            color: #ff2079;
-            text-shadow: 0 0 8px #ff2079;
+            color: #00FFFF;
+            text-shadow: 0 0 8px #00FFFF;
             font-family: "Iceland", sans-serif;
         }
         p, div, label { color: #c0c0c0; font-family: "Iceland", sans-serif; font-size: 20px !important; text-shadow:0 0 8px #00FFFF;}
