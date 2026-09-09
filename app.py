@@ -60,11 +60,11 @@ st.set_page_config(page_title="Music Rankings", layout="wide")
 
 # --- Cyberpunk Style ---
 def apply_cyberpunk_style():
-    st.markdown('<link href="https://fonts.googleapis.com/css2?family=Iceland&family=Barrio&display=swap" rel="stylesheet">', unsafe_allow_html=True)
+    st.markdown('<link href="https://fonts.googleapis.com/css2?family=Grape+Nuts&family=Barrio&display=swap" rel="stylesheet">', unsafe_allow_html=True)
     st.markdown('<script src="https://unpkg.com/lucide@latest"></script>', unsafe_allow_html=True)
     st.markdown("""
         <style>
-        @import url('https://fonts.googleapis.com/css2?family=Iceland&family=Barrio&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Grape+Nuts&family=Barrio&display=swap');
         .stApp { background-color: #0a0a0f; }
         h1 {
             color: #00fff9;
@@ -75,15 +75,15 @@ def apply_cyberpunk_style():
         h2, h3 {
             color: #00FFFF;
             text-shadow: 0 0 8px #00FFFF;
-            font-family: "Iceland", sans-serif;
+            font-family: "Grape+Nuts", sans-serif;
         }
-        p, div, label { color: #c0c0c0; font-family: "Iceland", sans-serif; font-size: 20px !important; text-shadow:0 0 8px #00FFFF;}
+        p, div, label { color: #c0c0c0; font-family: "Grape+Nuts", sans-serif; font-size: 20px !important; text-shadow:0 0 8px #00FFFF;}
         div.stButton > button {
             background-color: #0a0a0f;
             color: #00fff9;
             border: 2px solid #00FFFF;
             box-shadow: 0 0 12px #00FFFFcc !important;
-            font-family: "Iceland", sans-serif;
+            font-family: "Grape+Nuts", sans-serif;
             border-radius: 8px;
             padding: 40px 20px;
             font-size: 24px !important;
