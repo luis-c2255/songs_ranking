@@ -231,7 +231,7 @@ def show_home():
     st.write("---")
     st.write("Select a year:")
 
-    for year in rankings_data.keys():
+    for year in sorted(rankings_data.keys(), reverse=True):
         if st.button(f"◈ {year}", key=f"year_{year}", use_container_width=True):
             st.session_state.selected_year = year
             st.session_state.page = "year"
